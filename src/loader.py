@@ -1,4 +1,4 @@
-from pathlib import path 
+from pathlib import Path 
 import pandas as pd 
 
 
@@ -9,7 +9,7 @@ def load_csv(file):
 
     file_name = getattr(file,"name",str(file))
 
-    if path(file_name).suffix.lower()!= ".csv":
+    if Path(file_name).suffix.lower()!= ".csv":
         raise ValueError("A csv file has to be uploaded")
 
     try:
