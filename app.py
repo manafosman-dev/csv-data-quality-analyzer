@@ -1,4 +1,5 @@
 import streamlit as st 
+import pandas as pd
 from src.loader import load_csv
 from src.validator import (
     missing_values_count, duplicate_values_count,
@@ -171,8 +172,17 @@ if uploaded_file is not None:
             )
 
 
+    except pd.errors.EmptyDataError:
+        st.error("Please upload a fill with data, CSV uploaded is empty")
+
+    except pd.errors.ParserError:
+        st.error("The CSV could'nt be parsed check fields in each row")
+
+    except UnicodeDecodeError:
+        st.error("The file unicoding not accept,save CSV with UFT-8")
 
     except (ValueError,TypeError) as error:
         st.error(str(error))
 
-
+    except Exception as error:
+        st.error(f"An unexpected error occurred:{error}")
