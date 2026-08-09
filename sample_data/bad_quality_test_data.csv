@@ -1,0 +1,26 @@
+ Customer ID ,Full Name,Age-Years,City ,Monthly Salary,Join-Date,Department
+C001,Ama Mensah,28,Accra,4500,2025-01-15,Sales
+C002,Kofi Owusu,35,Kumasi,5200,15/02/2025,IT
+C003,Abena Boateng,,Takoradi,4800,2025/03/01,Finance
+C004,Kwame Asante,42,,6100,March 5 2025,Operations
+C005,Esi Addo,31,accra,,2025-04-10,HR
+C006,Yaw Osei,29, ACCRA ,4700,10-05-2025,sales
+C007,Akosua Darko,250,Tamale,5000,2025-06-01,Marketing
+C008,Kojo Appiah,38,Kumasi,999999,2025-06-15,IT
+C009,Adwoa Frimpong,27,Cape Coast,4300,,Finance
+C010,Nana Yeboah,33,Accra,5600,2025-07-20,
+C011,  Fatima Ibrahim  ,45,Tamale,6200,2025-08-01,Operations
+C012,Joseph Arthur,22,KUMASI,3900,2025-08-15,it
+C013,Linda Quaye,,Ho,4100,2025-09-01,HR
+C014,Michael Tetteh,40,Accra,-500,2025-09-10,Sales
+C015,Grace Badu,36,Sunyani,5800,not-a-date,Finance
+C016,Daniel Koomson,19,Koforidua,3700,2025-10-01,Marketing
+C017,Mary Agyeman,34,Accra,5400,2025-10-15,Operations
+C018,Samuel Nartey,30,,5100,2025-11-01,IT
+C019,Jennifer Sackey,29,Tema,4900,2025-11-15,Human Resources
+C020,Richard Annan,120,Accra,4700,2025-12-01,Sales
+C005,Esi Addo,31,accra,,2025-04-10,HR
+C012,Joseph Arthur,22,KUMASI,3900,2025-08-15,it
+C021,,26,Kumasi,4400,2025-12-15,Finance
+C022,Patricia Ofori,32,Tema,,2026-01-01,Operations
+C023,George Mensimah,,Accra,1000000,2026-01-15,IT

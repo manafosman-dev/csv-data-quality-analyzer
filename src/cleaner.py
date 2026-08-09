@@ -5,6 +5,7 @@ def remove_duplicate(dataframe):
     """ copy of dataframe with duplicates removed """
     cleaned_dataframe = dataframe.copy()
     cleaned_dataframe = dataframe.drop_duplicates()
+
     return cleaned_dataframe 
 
 
@@ -51,9 +52,9 @@ def columns_standardization(dataframe):
 
 def clean_dataframe(dataframe):
     """ clean dataframe in sequencial order"""
-    clean_dataframe = remove_duplicate(dataframe)
     clean_dataframe = missing_numeric_values(dataframe)
-    clean_dataframe = missing_text_values(dataframe)
-    clean_dataframe = columns_standardization(dataframe)
+    clean_dataframe = missing_text_values(clean_dataframe)
+    clean_dataframe = columns_standardization(clean_dataframe)
+    clean_dataframe = remove_duplicate(clean_dataframe)
 
     return clean_dataframe

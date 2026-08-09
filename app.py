@@ -100,14 +100,17 @@ if uploaded_file is not None:
         st.dataframe(outlier_report)
 
 
+
         st.subheader("Clean Dataset")
 
         if st.button("Clean Data"):
-            clean_dataframe = clean_dataframe(data_frame)
-            cleaned_quality_score = calc_quality_score(clean_dataframe)
+            cleaned_dataframe = clean_dataframe(data_frame)
+            cleaned_quality_score = calc_quality_score(cleaned_dataframe)
 
             st.success("Data cleaned successfully!")
 
+
+            #Score card for data quality 
             original_column,cleaned_column = st.columns(2)
 
             original_column.metric(
@@ -120,7 +123,52 @@ if uploaded_file is not None:
                 f"{cleaned_quality_score}/100",
                 delta = round(cleaned_quality_score - quality_score,2),
             )
-        
+
+
+
+
+
+
+            #Score cards for cleaned data 
+            cleaned_missing = int(
+                missing_values_count(cleaned_dataframe).sum()
+            )
+            cleaned_duplicates = duplicate_values_count(cleaned_dataframe)
+
+            rows_removed = (data_frame.shape[0] - cleaned_dataframe.shape[0])
+
+
+            rows_column,missing_column,duplicate_column = st.columns(3)
+
+            
+            rows_column.metric(
+                "Duplicated Rows Removed",
+                rows_removed,
+            )
+
+            missing_column.metric(
+                "Remaining Missing Values",
+                cleaned_missing,
+            )
+
+            duplicate_column.metric(
+                "Remaining Duplicate Rows",
+                cleaned_duplicates
+            )
+            
+
+            # Preview of the first 10 rows of the cleaned data 
+            st.subheader("Cleaned Data Preview")
+            st.dataframe(cleaned_dataframe.head(10))
+
+            cleaned_csv = cleaned_dataframe.to_csv(index = False).encode("utf-8")
+
+            st.download_button(
+                label = "Download cleaned CSV",
+                data = cleaned_csv,
+                file_name = "cleaned_dataset.csv",
+                mime ="text/csv",
+            )
 
 
 
