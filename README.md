@@ -18,6 +18,10 @@ A Streamlit application that analyzes CSV files, identifies common data-quality 
 - Handle empty, malformed, and unsupported CSV files
 - Automated tests for the cleaning pipeline
 
+## Application Preview
+
+![CSV Data Quality Analyzer interface](assets/app_screenshot.png)
+
 ## Application Workflow
 
 1. Upload a CSV file.
