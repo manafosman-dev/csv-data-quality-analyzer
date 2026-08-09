@@ -16,7 +16,9 @@ def missing_numeric_values(dataframe):
 
     for column in numeric_columns:
         median_value  = cleaned_dataframe[column].median()
-        cleaned_dataframe[column] = cleaned_dataframe[column].fillna(median_value)
+
+        if not pd.isna(median_value):
+            cleaned_dataframe[column] = (cleaned_dataframe[column].fillna(median_value))
 
     return cleaned_dataframe    
 
@@ -26,12 +28,12 @@ def missing_text_values(dataframe):
     cleaned_dataframe = dataframe.copy()
     text_columns = dataframe.select_dtypes(include=["object","string"]).columns
 
-    for column in cleaned_dataframe:
+    for column in text_columns:
         mode_values = cleaned_dataframe[column].mode()
 
         if not mode_values.empty:
             most_freq_value = mode_values.iloc[0]
-            cleaned_dataframe[column] = cleaned_dataframe[column].fillna(most_freq_value)
+            cleaned_dataframe[column] = (cleaned_dataframe[column].fillna(most_freq_value))
 
     return cleaned_dataframe   
 
@@ -44,8 +46,8 @@ def columns_standardization(dataframe):
         cleaned_dataframe.columns
         .str.strip()
         .str.lower()
-        .str.replace(" ","_")
-        .str.replace("-","_")
+        .str.replace(" ","_",regex=False)
+        .str.replace("-","_",regex=False)
     )
     return cleaned_dataframe
 
