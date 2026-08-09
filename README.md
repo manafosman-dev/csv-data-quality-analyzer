@@ -1,5 +1,9 @@
 # CSV Data Quality Analyzer
 
+## Live Application
+
+[Launch the CSV Data Quality Analyzer](https://csv-data-quality-analyzer.streamlit.app/)
+
 A Streamlit application that analyzes CSV files, identifies common data-quality problems, cleans the data, and produces a downloadable cleaned dataset.
 
 ## Features
